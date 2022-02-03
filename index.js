@@ -1,5 +1,11 @@
 const readline = require('readline');
 
+const VALIDATION_STATES = {
+    correct: 'g',
+    exists: 'y',
+    incorrect: 'r'
+};
+
 const sc = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -7,13 +13,8 @@ const sc = readline.createInterface({
 
 sc.ask = (query) => new Promise((res) => sc.question(query, res));
 
-const VALIDATION_STATES = {
-    correct: 'g',
-    exists: 'y',
-    incorrect: 'r'
-};
-
 /**
+*   Gets the frequency of each letter 
 *   @param {string[]} word
 *   @returns {Object} 
 */
@@ -25,11 +26,11 @@ function getLetterFrequency(word) {
         frequency[c]++;
     }
     
-
     return frequency;
 }
 
 /**
+*   Checks accuracy of guessed word and returns color statuses
 *   @param {string[]} word
 *   @param {string} guess
 *   @returns {string[]} 
@@ -52,6 +53,10 @@ function checkAccuracy(word, frequency, guess) {
     return accuracy;
 }
 
+/**
+*   Plays the word game
+*   @param {string[]} word
+*/ 
 async function playWordle(word) {
     word = [...word.toUpperCase()];
     
@@ -87,6 +92,5 @@ async function playWordle(word) {
     sc.close(); 
 }
 
-// playWordle('canal');
 playWordle('could');
 
