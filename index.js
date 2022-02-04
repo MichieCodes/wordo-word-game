@@ -1,16 +1,19 @@
 const readline = require('readline');
 
+// Accuracy color statuses
 const VALIDATION_STATES = {
     correct: 'g',
     exists: 'y',
     incorrect: 'r'
 };
 
+// Create readline scanner
 const sc = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
+//Promisify sc.question and store it in sc.ask
 sc.ask = (query) => new Promise((res) => sc.question(query, res));
 
 /**
@@ -30,7 +33,7 @@ function getLetterFrequency(word) {
 }
 
 /**
-*   Checks accuracy of guessed word and returns color statuses
+*   Checks accuracy of guess and returns list of validation states
 *   @param {string[]} word
 *   @param {string} guess
 *   @returns {string[]} 
@@ -89,8 +92,7 @@ async function playWordle(word) {
      }
 
     console.log("WORD WAS:\t", word.join(''));
-    sc.close(); 
 }
 
 playWordle('could');
-
+sc.close(); 
