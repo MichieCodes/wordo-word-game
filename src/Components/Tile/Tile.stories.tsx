@@ -1,18 +1,17 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import Tile from './Tile';
+import Tile from './Tile'
+
+type TileMeta = ComponentMeta<typeof Tile>
+type TileStory = ComponentStory<typeof Tile>
 
 export default {
   title: 'Wordle/Tile',
-  component: Tile,
-};
+  component: Tile
+} as TileMeta
 
-// const Template: ComponentStory<typeof Tile> = () => <Tile/>;
+const Template : TileStory = () => <Tile/>;
 
-// export const GreenTile = Template.bind({});
-// GreenTile.args = {
-  // label: 'Button',
-// };
-
-export const GreenTile = () => <Tile/>
+export const GreenTile : TileStory = Template.bind({})
+GreenTile.args = {}
