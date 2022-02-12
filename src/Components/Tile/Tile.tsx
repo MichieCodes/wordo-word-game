@@ -1,9 +1,8 @@
-// import style from './Tile.module.css'
-import './Tile.css'
+import styles from './Tile.module.css'
 
 function Tile() {
   return (
-    <div className="tile">W</div>
+    <div className={styles.tile}>W</div>
   )
 }
 
