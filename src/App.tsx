@@ -1,4 +1,4 @@
-import Tile from './Components/Tile/Tile'
+import Tile from './Components/Tile'
 
 import './App.css'
 
