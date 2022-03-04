@@ -5,10 +5,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <Tile/>
-      </header>
+      {Array.from(Array(5), () => <Tile/>)}
     </div>
   )
 }
