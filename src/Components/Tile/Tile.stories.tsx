@@ -1,4 +1,3 @@
-import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import Tile from './Tile'
@@ -15,3 +14,6 @@ const Template : TileStory = () => <Tile/>;
 
 export const GreenTile : TileStory = Template.bind({})
 GreenTile.args = {}
+
+export const YellowTile : TileStory = Template.bind({})
+YellowTile.args = {}
